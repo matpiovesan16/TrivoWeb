@@ -169,7 +169,7 @@ header {
     }
 
     .titulo {
-        margin-top: 80px;
+        margin-top: 10px;
         font-size: 50px; /* Título más pequeño en responsive */
     }
 
