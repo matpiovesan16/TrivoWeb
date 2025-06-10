@@ -76,8 +76,8 @@ header {
 .btn-animated {
     padding: 15px 30px;
     font-size: 18px;
-    color: white;
-    background: linear-gradient(45deg, hsl(33, 98%, 45%), #fb6d15);
+    color: #FFF9E9;
+    background: linear-gradient(45deg, #f2701d, #fb6d15);
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -85,6 +85,7 @@ header {
     transition: all 0.3s ease;
     margin-top: 20px;
     box-shadow: 0 0 20px rgba(242, 112, 29, 0.6), 0 0 30px rgba(242, 112, 29, 0.4);
+    overflow: hidden;
 }
 
 .btn-animated:hover {
@@ -94,14 +95,32 @@ header {
 
 .btn-animated:active {
     transform: translateY(1px);
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 10px rgba(242, 112, 29, 0.5);
 }
 
+/* Efecto de brillo del botón */
+.btn-animated::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+/* Animación del brillo */
 @keyframes shine {
     0% {
         transform: translateX(-100%) rotate(45deg);
     }
-
     100% {
         transform: translateX(100%) rotate(45deg);
     }
